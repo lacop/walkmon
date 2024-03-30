@@ -11,3 +11,20 @@ TARGET=aarch64-unknown-linux-gnu
 cross build --release --target=${TARGET}
 scp target/${TARGET}/release/walkmon rpi-host:
 ```
+
+## Demo
+
+```console
+$ ./walkmon
+Scanning for Bluetooth adapters...
+Scanning for WalkingPad...
+Discovered device: Some(PeripheralProperties { ..snip.. })
+Connecting to WalkingPad...
+Reading data from WalkingPad...
+Press Ctrl+C to stop.
+Speed: 2.0 km/h, Time: 1:38:27, Distance: 3.280 m, Steps: 6219
+Speed: 2.0 km/h, Time: 1:38:28, Distance: 3.280 m, Steps: 6220
+Speed: 2.0 km/h, Time: 1:38:29, Distance: 3.280 m, Steps: 6221
+^C
+Stopping...
+```
