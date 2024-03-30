@@ -1,0 +1,16 @@
+[package]
+name = "walkmon"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.81"
+btleplug = "0.11"
+# We don't need dbus directly, but we want to enable the "vendored" feature
+# to support simple cross-compilation via cross-rs. Cargo merges the feature
+# flags of all dependencies, so this will enable it for btleplug as well.
+# See https://github.com/diwic/dbus-rs/blob/master/libdbus-sys/cross_compile.md
+dbus = { version = "*", features = ["vendored"] }
+tokio = { version = "1.37", features = ["macros", "rt-multi-thread", "signal"] }
+tokio-stream = "0.1.15"
+
